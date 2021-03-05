@@ -27,3 +27,5 @@ ex_tr39-*.tar
 /tmp
 
 .tool-versions
+
+.mix_tasks

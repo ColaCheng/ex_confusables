@@ -1,11 +1,12 @@
 defmodule ExConfusables do
   @moduledoc """
-  Documentation for `ExTr39`.
+  Documentation for `ExConfusables`.
   """
 
   alias ExConfusables.Confusables
 
   @doc """
+  Check if two strings are confusable for each other.
 
   ## Examples
 
@@ -18,6 +19,8 @@ defmodule ExConfusables do
   end
 
   @doc """
+  Transforms a unicode string by replacing unusual characters with similar-looking common characters,
+  as specified by the [Unicode Standard Annex #39](http://www.unicode.org/reports/tr39/).
 
   ## Examples
 
@@ -26,6 +29,8 @@ defmodule ExConfusables do
 
   """
   def skeleton(s) do
-    Confusables.parse(s)
+    :unicode.characters_to_binary(s)
+    |> Confusables.parse()
+    |> :unicode.characters_to_nfd_binary()
   end
 end
