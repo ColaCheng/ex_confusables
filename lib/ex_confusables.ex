@@ -33,4 +33,11 @@ defmodule ExConfusables do
     |> Confusables.parse()
     |> :unicode.characters_to_nfd_binary()
   end
+
+  @doc false
+  def skeleton2(s) do
+    :unicode.characters_to_list(s)
+    |> Enum.map(&Confusables.parse_char/1)
+    |> :unicode.characters_to_nfd_list()
+  end
 end
