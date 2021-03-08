@@ -10,7 +10,7 @@ Check if two strings are confusable for each other.
 
 ```elixir
 iex> ExConfusables.confusable?("ℰlixir", "Elixir")
-      true
+     true
 ```
 
 ### ExConfusables.skeleton/1
@@ -20,7 +20,7 @@ Transforms a unicode string by replacing unusual characters with similar-looking
 
 ```elixir
 iex> ExConfusables.skeleton("ℰlixir")
-      "Elixir"
+     "Elixir"
 ```
 
 ## Installation
