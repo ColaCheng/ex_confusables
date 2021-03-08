@@ -17,7 +17,7 @@ defmodule ExConfusables.MixProject do
       source_url: "https://github.com/ColaCheng/ex_confusables",
       description: """
       Elixir implementation of Unicode TR39 skeleton algorithm.
-      Ref: [https://unicode.org/reports/tr39/](https://unicode.org/reports/tr39/)
+      Ref: https://unicode.org/reports/tr39/
       """
     ]
   end
