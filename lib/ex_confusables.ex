@@ -36,8 +36,9 @@ defmodule ExConfusables do
 
   @doc false
   def skeleton2(s) do
-    :unicode.characters_to_list(s)
-    |> Enum.map(&Confusables.parse_char/1)
+    for c <- :unicode.characters_to_list(s) do
+      Confusables.parse_char(c)
+    end
     |> :unicode.characters_to_nfd_list()
   end
 end
