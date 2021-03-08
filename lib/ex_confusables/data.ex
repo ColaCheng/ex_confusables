@@ -28,11 +28,9 @@ defmodule ExConfusables.Data do
 
   defp build_list([line | tail], acc) do
     [c1, c2 | _] = String.split(line, ";", trim: true)
-    key = "0x" <> String.trim(c1)
+    key = String.trim(c1)
 
-    value =
-      String.split(c2, [" ", "\t"], trim: true)
-      |> Enum.map(fn e -> "0x" <> e end)
+    value = String.split(c2, [" ", "\t"], trim: true)
 
     build_list(tail, [{key, value} | acc])
   end

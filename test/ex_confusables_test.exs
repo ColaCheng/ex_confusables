@@ -14,9 +14,12 @@ defmodule ExConfusablesTest do
 
   test "all chars confusable test" do
     for {key, value} <- Data.get() do
-      append = Enum.join(value, "::utf8, ")
+      append =
+        Enum.map(value, fn e -> "0x" <> e end)
+        |> Enum.join("::utf8, ")
+
       Code.string_to_quoted("""
-        true = ExConfusables.confusable?(<<#{key}::utf8>>, <<#{append}::utf8>>)
+        true = ExConfusables.confusable?(<<0x#{key}::utf8>>, <<#{append}::utf8>>)
       """)
       |> Code.eval_quoted()
     end
