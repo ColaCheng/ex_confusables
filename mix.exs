@@ -4,11 +4,17 @@ defmodule ExConfusables.MixProject do
   def project do
     [
       app: :ex_confusables,
+      name: "ExConfusables",
       version: "0.1.0",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      xref: [exclude: [:inets, :httpc]]
+      package: package(),
+      xref: [exclude: [:inets, :httpc]],
+      description: """
+      Elixir implementation of Unicode TR39 skeleton algorithm.
+      Ref: https://unicode.org/reports/tr39/
+      """
     ]
   end
 
@@ -23,6 +29,14 @@ defmodule ExConfusables.MixProject do
   defp deps do
     [
       {:benchee, git: "https://github.com/bencheeorg/benchee.git", only: :dev}
+    ]
+  end
+
+  defp package do
+    [
+      maintainers: ["Cola Cheng"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/ColaCheng/ex_confusables"}
     ]
   end
 end
