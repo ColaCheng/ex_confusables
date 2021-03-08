@@ -28,7 +28,8 @@ defmodule ExConfusables.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:benchee, git: "https://github.com/bencheeorg/benchee.git", only: :dev}
+      {:benchee, git: "https://github.com/bencheeorg/benchee.git", only: :dev},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 
