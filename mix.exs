@@ -1,16 +1,20 @@
 defmodule ExConfusables.MixProject do
   use Mix.Project
 
+  @version "0.1.0"
+
   def project do
     [
       app: :ex_confusables,
       name: "ExConfusables",
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       package: package(),
+      docs: docs(),
       xref: [exclude: [:inets, :httpc]],
+      source_url: "https://github.com/ColaCheng/ex_confusables",
       description: """
       Elixir implementation of Unicode TR39 skeleton algorithm.
       Ref: https://unicode.org/reports/tr39/
@@ -38,6 +42,15 @@ defmodule ExConfusables.MixProject do
       maintainers: ["Cola Cheng"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/ColaCheng/ex_confusables"}
+    ]
+  end
+
+  defp docs do
+    [
+      main: "ExConfusables",
+      source_ref: "v#{@version}",
+      formatters: ["html", "epub"],
+      extras: ["README.md"]
     ]
   end
 end
