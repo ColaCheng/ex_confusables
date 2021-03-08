@@ -1,4 +1,6 @@
 defmodule ExConfusables.Data do
+  @moduledoc false
+
   @confusables_txt_url 'https://www.unicode.org/Public/security/latest/confusables.txt'
 
   def get() do

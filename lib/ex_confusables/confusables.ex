@@ -1,4 +1,6 @@
 defmodule ExConfusables.Confusables do
+  @moduledoc false
+
   alias ExConfusables.Data
   confusables_list = Data.get()
 
