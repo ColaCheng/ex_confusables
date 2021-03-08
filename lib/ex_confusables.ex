@@ -14,6 +14,7 @@ defmodule ExConfusables do
       true
 
   """
+  @spec confusable?(String.t(), String.t()) :: boolean()
   def confusable?(s1, s2) do
     skeleton(s1) === skeleton(s2)
   end
@@ -33,6 +34,7 @@ defmodule ExConfusables do
       "Elixir"
 
   """
+  @spec skeleton(String.t()) :: String.t()
   def skeleton(s) do
     for c <- :unicode.characters_to_list(s) do
       Confusables.parse_char(c)
