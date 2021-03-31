@@ -11,7 +11,7 @@ Compares two strings if they are visually confusable as described in [Unicode® 
 Check if two strings are confusable for each other.
 
 ```elixir
-iex> ExConfusables.confusable?("ℰlixir", "Elixir")
+iex> ExConfusables.confusable?("𝓔׀і⨯ꭵ𝕣", "Elixir")
      true
 ```
 
@@ -21,7 +21,7 @@ Transforms a unicode string by replacing unusual characters with similar-looking
   as specified by the [Unicode Standard Annex #39](http://www.unicode.org/reports/tr39/).
 
 ```elixir
-iex> ExConfusables.skeleton("ℰlixir")
+iex> ExConfusables.skeleton("𝓔׀і⨯ꭵ𝕣")
      "Elixir"
 ```
 
