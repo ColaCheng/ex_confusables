@@ -33,7 +33,8 @@ defmodule ExConfusables.MixProject do
   defp deps do
     [
       {:benchee, git: "https://github.com/bencheeorg/benchee.git", only: :dev},
-      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      {:dialyxir, "~> 1.1", only: [:dev], runtime: false}
     ]
   end
 
