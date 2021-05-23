@@ -32,7 +32,7 @@ Adding `ex_confusables` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:ex_confusables, "~> 0.1.0"}
+    {:ex_confusables, "~> 0.1"}
   ]
 end
 ```
