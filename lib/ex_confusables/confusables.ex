@@ -2,6 +2,8 @@ defmodule ExConfusables.Confusables do
   @moduledoc false
 
   alias ExConfusables.Data
+  Application.ensure_all_started(:ssl)
+  :inets.start()
   confusables_list = Data.get()
 
   for {key, value} <- confusables_list do

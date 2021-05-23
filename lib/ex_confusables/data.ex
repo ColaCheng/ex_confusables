@@ -4,8 +4,6 @@ defmodule ExConfusables.Data do
   @confusables_txt_url 'https://www.unicode.org/Public/security/latest/confusables.txt'
 
   def get() do
-    Application.ensure_all_started(:ssl)
-    :inets.start()
     {:ok, {{_, 200, _}, _headers, body}} = :httpc.request(@confusables_txt_url)
     bin = :erlang.iolist_to_binary(body)
     process(bin)
