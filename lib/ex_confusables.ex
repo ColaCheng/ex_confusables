@@ -10,7 +10,7 @@ defmodule ExConfusables do
 
   ## Examples
 
-      iex> ExConfusables.confusable?("ℰlixir", "Elixir")
+      iex> ExConfusables.confusable?("𝓔׀і⨯ꭵ𝕣", "Elixir")
       true
 
   """
@@ -25,7 +25,7 @@ defmodule ExConfusables do
 
   ## Examples
 
-      iex> ExConfusables.skeleton("ℰlixir")
+      iex> ExConfusables.skeleton("𝓔׀і⨯ꭵ𝕣")
       "Elixir"
 
   """
